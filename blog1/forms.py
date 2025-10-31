@@ -1,6 +1,8 @@
 from django import forms
 from .models import Post
 
+
+
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
@@ -22,3 +24,9 @@ class EditForm(forms.ModelForm):
             #'author': forms.Select(attrs={'class': 'form-control'}),
             'body': forms.Textarea(attrs={'class': 'form-control'}),
         }
+
+
+class ContactForm(forms.Form):
+    name = forms.CharField(max_length=100)
+    email = forms.EmailField()
+    message = forms.CharField(widget=forms.Textarea)

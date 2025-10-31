@@ -127,3 +127,13 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
+
+DEBUG = True
+EMAIL_HOST = 'smpt.gmail.com'
+EMAIL_HOST_USER = 'robertcocosila0@gmail.com'
+EMAIL_HOST_PASSWORD = 'owfcgzwsgkrszxwy'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+ALLOWED_HOSTS = []
