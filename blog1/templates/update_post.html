@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %} Editer post {% endblock %}
+{% block content %}
+
+{% if user.is_authenticated %}
+{% if user.id == post.author.id %}
+
+<h1>Editer post</h1>
+<br><br/>
+<form method="POST">
+<div class="form-group">
+    {% csrf_token %}
+    {{ form.as_p }}
+    {{ form.media }}
+    <button class="btn btn-secondary">Editer</button>
+</div>
+
+{% else %}
+<p>No, no, no, pas les droits!</p>
+  
+<img 
+  src="/static/images/warning.gif" 
+  alt="warning"
+  style="width:400px;"
+>
+{% endif %}
+    {% else %}
+  <p>No, no, no, pas les droits!</p>
+  
+  <img 
+    src="/static/images/warning.gif" 
+    alt="warning"
+    style="width:400px;"
+  >
+
+{% endif %}
+{% endblock %}
