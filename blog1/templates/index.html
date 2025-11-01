@@ -10,8 +10,13 @@
     <link rel="stylesheet" href="style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>RobertCocosila</title>
-</head>
+    <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+
+  </head>
 <body>
+  <div id="to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </div>
     <header class="header">
         <a href="#home" class="logo">Robert Cocosila</a>
     <button id="themeButton">🌙</button>
@@ -21,10 +26,13 @@
           <span></span>
           <span></span>
         </div>
-    
-        <a href="#home">Accueil</a>
-        <a href="#about">Colleagues</a>
-        <a href="base.html">Projets</a>
+        <a href="#home" class="hideOnmobile">Accueil</a>
+        <a href="#about" class="hideOnmobile">Colleagues</a>
+        <a href="http://127.0.0.1:8000/">Projets</a>
+        <label for = "" class ="icons">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="26" fill="currentColor" viewBox="0 0 24 24" onclick="showSidebar()"><path d="M4 6h16v2H4zM4 11h16v2H4zM4 16h16v2H4z"></path></svg>
+        </label>
+        
       </nav>
     </header>
     <section class="section home" id="home">
@@ -36,17 +44,17 @@
         <h3>Je suis <span class="multiple-text">étudiant </span>en première année d’informatique à</h3>
         <h1>
             <a href="https://iut.univ-amu.fr/fr/formations/bachelor-universitaire-de-technologie/but-informatique/but-info-aix" target="_blank">
-              <span>l’IUT d’Aix-en-Provence</span>
+                <span>l’IUT d’Aix-en-Provence</span>
                 </a>
             </h1>
         <div class="social-media">
             <a href="https://www.linkedin.com/in/robertcocosila/" target="_blank" rel="noopener noreferrer">
                 <i class='bx bxl-linkedin'></i>
-              </a>
-              
-              <a href="https://github.com/robertcocosila" target="_blank" rel="noopener noreferrer">
+                </a>
+                
+                <a href="https://github.com/robertcocosila" target="_blank" rel="noopener noreferrer">
                 <i class="bx bxl-github"></i>
-              </a>              
+                </a>             
         </div>
     </div>
 <script src="script.js"></script>
@@ -54,46 +62,47 @@
 </section>
 <section class="about" id="about">
     <div class="about-content">
-  
-     <!--Tristan-->
-
+ 
       <div class="person">
-        <h2 class="heading">Tristan <span>Bayoux</span></h2>
+        <h2 class="heading">Colleague <span>No.1</span></h2>
         <div class="about-img">
           <img src="profile.jpg" alt="profile">
         </div>
       </div>
-  
-      <!--William -->
-
-
+ 
       <div class="person reverse">
         <div class="about-img">
           <img src="profile.jpg" alt="profile">
         </div>
-        <h2 class="heading">William <span>Bayoux</span></h2>
+        <h2 class="heading">Colleague <span>No.2</span></h2>
       </div>
-  
+ 
     </div>
   </section>
 
 
-<section class="contact" id="contact">
+  <section class="contact" id="contact">
     <h2 class="heading">Contact</h2>
-    <div class="input-box">
-        <input type="text" placeholder="Full Name">
-        <input type="email" name="Email" placeholder="Email">
-    </div>
-    <div class="input-box">
-        <input type="text" placeholder="Sujet">
-    </div>
-    <textarea name="message" id="" cols="30" rows="10" placeholder="Message"></textarea>
-    <input type="submit" value="Send Message" class="btn">
-</section>
+    <form id="contact-form" method="POST" action="">
 
-    <footer class="footer">
-        <div class="social">
-            
+      <div class="input-box">
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+      </div>
+  
+      <div class="input-box">
+        <input type="text" name="subject" placeholder="Subject" required>
+      </div>
+  
+      <textarea name="message" cols="30" rows="10" placeholder="Message" required></textarea>
+  
+      <input type="submit" value="Send Message" class="btn">
+    </form>
+  
+    <p id="form-status"></p>
+  </section>
+
+
         </div>
     </footer>
 
