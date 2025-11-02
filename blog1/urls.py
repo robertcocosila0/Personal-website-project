@@ -10,7 +10,7 @@ from django.http import HttpResponse
 from django.conf import settings
 
 
-@csrf_exempt 
+@csrf_exempt
 def contact_api(request):
     if request.method == 'POST':
         try:
@@ -35,7 +35,7 @@ def contact_api(request):
           
             print(f"Email Sending Failed: {e}")
           
-            return JsonResponse({"status": "error", "message": "erreur."}, status=500)
+            return JsonResponse({"status": "error", "message": str(e)}, status=500)
     
     return JsonResponse({"status": "error", "message": "erreur"}, status=405)
 
