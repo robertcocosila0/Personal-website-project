@@ -28,12 +28,15 @@ DEBUG = True
 ALLOWED_HOSTS = ["*"]
 
 CORS_ALLOWED_ORIGINS = [
+    "https://robertcocosila0.github.io",
     "http://localhost:5500",
     "http://127.0.0.1:5500",
     "http://*"
 ]
 
 CSRF_TRUSTED_ORIGINS = [
+    "https://robertcocosila0.github.io",
+    "https://robertcocosila-blog.onrender.com",
     "http://localhost:5500",
     "http://127.0.0.1:5500",
 ]
