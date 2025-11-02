@@ -4,7 +4,7 @@ function getCookie(name) {
   if (parts.length === 2) return parts.pop().split(';').shift();
 }
 document.addEventListener('DOMContentLoaded', () => {
-  // Moved inside DOMContentLoaded to ensure the element exists
+
   const themeButton = document.getElementById('themeButton');
   let darkMode = false;
 
@@ -12,10 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
       themeButton.addEventListener('click', () => {
           darkMode = !darkMode;
 
-          // Animation click
+      
           themeButton.classList.add('rotate');
 
-          // Rotation
+       
           setTimeout(() => {
               themeButton.textContent = darkMode ? '☀️' : '🌙';
           }, 200);
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
               themeButton.classList.remove('rotate');
           }, 400);
 
-          // mode noir
+       
           document.body.classList.toggle('dark-theme', darkMode);
       });
   }
@@ -41,11 +41,11 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   }
 
-  // Contact form submission logic
+
   const contactForm = document.getElementById('contact-form');
   if (contactForm) {
       contactForm.addEventListener('submit', async function(e) {
-          e.preventDefault(); // oprește submit-ul normal
+          e.preventDefault();
 
           const formData = new FormData(this);
           const data = {
@@ -58,15 +58,15 @@ document.addEventListener('DOMContentLoaded', () => {
           const statusEl = document.getElementById('form-status');
           console.log(window.location.href)
           
-          // *** FIX: Changed the target URL to the CSRF-exempted endpoint /api/contact/ ***
-          var djangoURL="http://127.0.0.1:8000/api/contact/"
+       
+          var djangoURL='https://robertcocosila-blog.onrender.com/api/contact/'
           if (!window.location.href.startsWith('http://127.0.0.1') && !window.location.href.startsWith('http://localhost' ))  {
-              // Note: If 'tralala' is a placeholder for a production domain, this should include the path.
-              djangoURL='tralala/api/contact/'
+            
+              djangoURL='https://robertcocosila-blog.onrender.com/api/contact/'
           }
           
           try {
-            // Your CSRF token retrieval and header setup is correct on the client side:
+        
             const csrftoken = getCookie('csrftoken')
             const headers=new Headers()
             headers.append('X-CSRFToken', csrftoken)
