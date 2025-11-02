@@ -412,3 +412,158 @@ button {
 #to-top.show {
     transform: scale(1);
 }
+
+
+@media (max-width: 1024px) {
+    html {
+        font-size: 55%; /* Slightly smaller base font */
+    }
+    section {
+        padding: 10rem 5% 2rem;
+    }
+    .header {
+        padding: 2rem 3%;
+    }
+    .navbar a {
+        margin-left: 2.5rem;
+    }
+    .home-img img, .about-img img {
+        width: 25vw; /* Adjust image size */
+    }
+    .home-content {
+        margin-left: 3rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    html {
+        font-size: 55%; /* Slightly smaller base font */
+    }
+    section {
+        padding: 10rem 5% 2rem;
+    }
+    .header {
+        padding: 2rem 3%;
+    }
+    .navbar a {
+        margin-left: 2.5rem;
+    }
+    .home-img img, .about-img img {
+        width: 25vw; /* Adjust image size */
+    }
+    .home-content {
+        margin-left: 3rem;
+    }
+}
+
+/* Mobile Adjustments (max-width: 768px) */
+@media (max-width: 768px) {
+    html {
+        font-size: 50%; /* Smaller base font for mobile readability */
+    }
+    section {
+        padding: 8rem 5% 2rem; /* Reduced vertical padding */
+    }
+
+    /* FIX 2: Mobile Menu Container Styling */
+    .navbar {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Start off-screen */
+        width: 70%;
+        height: 100vh;
+        background: var(--main-color);
+        padding: 4rem 3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
+        transition: right 0.3s ease-in-out;
+        z-index: 1000;
+    }
+    
+    .navbar.active {
+        right: 0; /* Slide in */
+    }
+    
+    /* Show the hamburger icon */
+    .icons {
+        display: block; 
+        position: absolute; 
+        right: 5%;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    /* Hide the main navigation links on mobile by default (to be shown in .navbar.active) */
+    .navbar .nav-link { 
+        display: none; /* Hide for desktop, show with .navbar.active */
+    }
+    
+    /* When menu is active, show the links */
+    .navbar.active .nav-link {
+        display: block;
+        margin: 0;
+        width: 100%;
+        padding: 1rem 0;
+        text-align: left;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    /* Show the close button when the menu is active */
+    .navbar.active .close-icon {
+        display: block;
+    }
+    
+    /* 2. Home Section - Stacking */
+    .home {
+        flex-direction: column;
+        text-align: center;
+    }
+    .home-img {
+        order: -1; /* Move image to top */
+        margin-bottom: 3rem;
+    }
+    .home-img img {
+        width: 50vw; /* Larger image on mobile */
+        max-width: 200px;
+    }
+    .home-content {
+        margin-left: 0; /* Remove margin-left */
+    }
+    .home-content h3 {
+        font-size: 2.5rem;
+    }
+    .home-content h1 {
+        font-size: 4rem;
+    }
+
+    /* 3. About Section - Stacking */
+    .person, .person.reverse {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+    /* Ensure image is always before content/title */
+    .person.reverse .about-img {
+        order: -1; 
+    }
+    .about-img img {
+        width: 50vw; 
+        max-width: 200px;
+    }
+    .person h2 {
+        margin-top: 1rem;
+    }
+
+    /* 4. Contact Form */
+    .contact form {
+        padding: 20px 15px;
+    }
+    .contact .input-box {
+        margin-bottom: 0;
+    }
+    .contact .input-box input {
+        margin-bottom: 1rem;
+    }
+}

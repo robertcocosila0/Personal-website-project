@@ -30,17 +30,16 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   }
 
-  // Scroll listener for the to-top button
-  document.addEventListener('scroll', () => {
-      const toTopButton = document.querySelector('#to-top');
-      if (toTopButton) {
-          if(window.scrollY > 200) {
-              toTopButton.classList.add('show')
-          } else {
-              toTopButton.classList.remove('show');
-          }
-      }
-  });
+  const toTopButton = document.getElementById('to-top');
+
+  if (toTopButton) {
+      toTopButton.addEventListener('click', () => {
+          window.scrollTo({
+              top: 0,
+              behavior: 'smooth'
+          });
+      });
+  }
 
   // Contact form submission logic
   const contactForm = document.getElementById('contact-form');

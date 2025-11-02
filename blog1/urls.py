@@ -20,25 +20,24 @@ def contact_api(request):
             subject = data.get('subject')
             message = data.get('message')
         
-            # We now use the standard `settings.EMAIL_HOST_USER` as the sender.
-            # This forces Django to use the global credentials stored in settings.
+        
             send_mail(
                 subject,
-                f"Mesaj de la {name} ({email}):\n\n{message}",
-                settings.EMAIL_HOST_USER,  # The sender (must match EMAIL_HOST_USER)
-                ['robertcocosila0@gmail.com'], # The recipient list
+                f"Message from {name} ({email}):\n\n{message}",
+                settings.EMAIL_HOST_USER,  
+                ['robertcocosila0@gmail.com'],
                 fail_silently=False,
             )
 
-            return JsonResponse({"status": "success", "message": "Mesaj trimis cu succes!"})
+            return JsonResponse({"status": "success", "message": "Message envoye"})
         
         except Exception as e:
-            # Log the full exception message to the server console for debugging
+          
             print(f"Email Sending Failed: {e}")
-            # Return a generic error message to the client
-            return JsonResponse({"status": "error", "message": "A apărut o eroare la trimiterea mesajului. Vă rugăm să reîncercați."}, status=500)
+          
+            return JsonResponse({"status": "error", "message": "erreur."}, status=500)
     
-    return JsonResponse({"status": "error", "message": "Metodă invalidă"}, status=405)
+    return JsonResponse({"status": "error", "message": "erreur"}, status=405)
 
 
 urlpatterns = [
