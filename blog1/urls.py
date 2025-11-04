@@ -24,7 +24,6 @@ def contact_api(request):
             send_mail(
                 subject,
                 f"Message from {name} ({email}):\n\n{message}",
-                None,
                 settings.DEFAULT_FROM_EMAIL,  
                 ['robertcocosila0@gmail.com'],
                 fail_silently=False,
