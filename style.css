@@ -47,7 +47,6 @@ body {
     color: white;
     font-size: 1.5rem;
     cursor: pointer;
-    transition: transform 0.4 ease;
     position: absolute;
     left: 20px;
 }

@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
           
        
           var djangoURL='https://robertcocosila-blog.onrender.com/api/contact/'
-          if (!window.location.href.startsWith('http://127.0.0.1') && !window.location.href.startsWith('http://localhost' ))  {
+          if (!window.location.href.startsWith('https://robertcocosila0.github.io/Personal-website-project/') && !window.location.href.startsWith('http://localhost' ))  {
             
               djangoURL='https://robertcocosila-blog.onrender.com/api/contact/'
           }
