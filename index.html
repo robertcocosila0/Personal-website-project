@@ -78,27 +78,30 @@
     </div>
   </section>
 
+<section class="contact" id="contact">
+  <h2 class="heading">Contact</h2>
+  <form id="contact-form" method="POST" action="">
+    <div class="input-box">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" placeholder="Full Name" required>
 
-  <section class="contact" id="contact">
-    <h2 class="heading">Contact</h2>
-    <form id="contact-form" method="POST" action="">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Email" required>
+    </div>
 
-      <div class="input-box">
-        <input type="text" name="name" placeholder="Full Name" required>
-        <input type="email" name="email" placeholder="Email" required>
-      </div>
+    <div class="input-box">
+      <label for="subject">Subject</label>
+      <input type="text" id="subject" name="subject" placeholder="Subject" required>
+    </div>
+
+    <label for="message">Message</label>
+    <textarea id="message" name="message" cols="30" rows="10" placeholder="Message" required></textarea>
+
+    <input type="submit" value="Send Message" class="btn">
+  </form>
+  <p id="form-status"></p>
+</section>
+
   
-      <div class="input-box">
-        <input type="text" name="subject" placeholder="Subject" required>
-      </div>
-  
-      <textarea name="message" cols="30" rows="10" placeholder="Message" required></textarea>
-  
-      <input type="submit" value="Send Message" class="btn">
-    </form>
-  
-    <p id="form-status"></p>
-  </section>
-        </div>
 </body>
 </html>
