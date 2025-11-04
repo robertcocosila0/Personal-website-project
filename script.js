@@ -67,10 +67,9 @@ document.addEventListener('DOMContentLoaded', () => {
           
           try {
         
-            const csrftoken = getCookie('csrftoken')
-            const headers=new Headers()
-            headers.append('X-CSRFToken', csrftoken)
-            headers.append('Content-Type', 'application/json')
+            const headers = new Headers();
+            headers.append('Content-Type', 'application/json');
+            
               const response = await fetch(djangoURL, {
                   method: 'POST',
                   headers: headers,
