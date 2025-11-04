@@ -161,7 +161,7 @@ import os
 #EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 #EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 EMAIL_BACKEND = "anymail.backends.postmark.EmailBackend"
-DEFAULT_FROM_EMAIL = 'robertcocosila0@gmail.com'
+DEFAULT_FROM_EMAIL = 'robert.cocosila@etu.univ-amu.fr'
 SERVER_EMAIL = DEFAULT_FROM_EMAIL
 ANYMAIL = {
     "POSTMARK_SERVER_TOKEN": os.environ.get('POSTMARK_SERVER_TOKEN'),
