@@ -4,10 +4,6 @@ from django import forms
 from django.core.exceptions import ValidationError
 
 
-def validate_univ_amu_email(value):
-    if not value.endswith('@univ-amu.fr'):
-        raise ValidationError('Seulement les adresses univ-amu.fr sont acceptées.')
-
 class SignUpForm(UserCreationForm):
     email = forms.EmailField(
         widget=forms.EmailInput(attrs={'class': 'form-control'}),
