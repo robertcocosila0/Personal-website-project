@@ -315,23 +315,21 @@ button {
     background: var(--main-color);
     padding: 80px 10%;
     text-align: center;
-    color: #000000;
   }
   
   .contact .heading {
     font-size: 2.5rem;
     margin-bottom: 20px;
-    color: #00ffcc;
-    text-shadow: 0 0 10px #00ffcc;
+    color: #ffffff;
   }
   
   .contact form {
     max-width: 600px;
     margin: 0 auto;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(0, 0, 0, 0.05);
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 255, 204, 0.1);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
   }
   
@@ -340,7 +338,7 @@ button {
     justify-content: space-between;
     gap: 10px;
     flex-wrap: wrap;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
   }
   
   .contact .input-box input,
@@ -357,15 +355,12 @@ button {
     transition: 0.3s;
   }
   
-  .contact .input-box input:focus,
-  .contact textarea:focus {
-    box-shadow: 0 0 10px #00ffcc;
-  }
-  
+
   .contact .btn {
-    background: linear-gradient(90deg, #00ffcc, #0077ff);
+    background: linear-gradient(90deg, #000000, #ffffff);
     border: none;
-    padding: 12px 30px;
+    padding: 10px 20px;
+    margin-top: 20px;
     color: #fff;
     font-weight: 600;
     border-radius: 30px;
@@ -374,8 +369,8 @@ button {
   }
   
   .contact .btn:hover {
-    background: linear-gradient(90deg, #0077ff, #00ffcc);
-    box-shadow: 0 0 20px #00ffcc;
+    background: linear-gradient(90deg, #000000, #000000);
+    box-shadow: 0 0 20px #000000;
   }
   
   #form-status {
@@ -383,34 +378,4 @@ button {
     font-weight: 500;
     font-size: 1.1rem;
   }
-
-
-
-#to-top {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 40px;
-    height: 40px;
-    font-size: 30px;
-    color: black;
-    background-color: white;
-    border-radius: 6px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: bottom 200ms, transform 200ms;
-}
-
-
-#to-top:hover {
-    bottom: 30px;
-}
-
-
-#to-top.show {
-    transform: scale(1);
-}
-
-
 

@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
                   this.reset(); 
               } else {
                   statusEl.style.color = 'red';
-                  statusEl.textContent = 'Eroare: ' + result.message;
+                  statusEl.textContent = 'Error: ' + result.message;
               }
           } catch (err) {
               statusEl.style.color = 'red';
